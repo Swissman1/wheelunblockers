@@ -9,51 +9,132 @@ const operators = [
         violations: ["No LLC Registration", "No proper vehicle Identification", "No address provided", "20% credit card fee", "Slow to respond","Utilizes spotter cars"]
     },
     {
-        id: "legit-clt",
-        name: "Legit Park CLT LLC",
-        tier: "green",
+        id: "sl-recovery",
+        name: "SL Recovery, INC",
+        tier: "Yellow",
         is_ghost: false,
-        phone: "704-555-0122",
-        address: "1234 Enforcement Way, Charlotte, NC 28202",
-        violations: []
+        phone: "704-889-2608",
+        address: "3804 N.Graham St, Charlotte, NC 28206",
+        violations: ["Vauge/High rates"]
     },    
-    {
-        id: "shifty-steve",
-        name: "Shifty Steve Recovery LLC",
-        tier: "yellow",
+        {
+        id: "automobile-recovery",
+        name: "Automobile Recovery & Parking Enforcement Inc",
+        tier: "Yellow",
         is_ghost: false,
-        phone: "704-555-0122",
-        address: "1234 College Street, Charlotte, NC 28202",
+        phone: "980-395-8460",
+        address: "7425 Orr Rd., Charlotte, NC 28213",
         violations: ["Vauge/High rates","20% credit card fee"]
-    }
+    }, 
+            {
+        id: "wheel-blockers",
+        name: "WheelBlockers Towing & Parking Enforcement Inc",
+        tier: "Red",
+        is_ghost: false,
+        phone: "704-606-4166",
+        address: "1326 Ashby Rd., Charlotte, NC 28206",
+        violations: ["Vauge/High rates","Utilizes Spotters"]
+    },             {
+        id: "pp-sl",
+        name: "Preferred Parking - SL Recovery",
+        tier: "Green",
+        is_ghost: false,
+        phone: "704-889-2608",
+        address: "3804 N.Graham St, Charlotte, NC 28206",
+        violations: []
+    }, 
+    {
+        id: "qc-impound",
+        name: "QC Impound",
+        tier: "Green",
+        is_ghost: false,
+        phone: "704-699-6330",
+        address: "206 Yeoman Rd, Charlotte, NC 28217",
+        violations: []
+    }, 
+
+    {
+        id: "lab-towing",
+        name: "Lab Towing & Parking Solutions, LLC",
+        tier: "Yellow",
+        is_ghost: false,
+        phone: "704-925-2012",
+        address: null,
+        violations: ["No Address on Signage", "25% Credit card fee"]
+    },
+    {
+        id: "clt-towing",
+        name: "Charlotte Towing & Recovery",
+        tier: "Yellow",
+        is_ghost: false,
+        phone: "704-925-2012",
+        address: "3040 Rozelles Ferry Rd., Charlotte, NC 28208",
+        violations: ["Vauge/High rates", "10% Credit card fee"]
+    },    {
+        id: "eastway-wrecker",
+        name: "Eastway Wrecker Service",
+        tier: "Yellow",
+        is_ghost: false,
+        phone: "704-393-3027",
+        address: "2801 Wilkinson Blvd., Charlotte, NC 28208",
+        violations: ["Vauge/High rates"]
+    },
 ];
 
 const properties = [
     {
         id: 1,
-        business_name: "Trade & Tryon Lot",
-        location: "100 W Trade St",
-        coords: [35.2271, -80.8431],
-        operator_id: "mcintyre" // Links to the operator above
+        business_name: "3510 Dewitt LLC(dissolved)",
+        location: "3510 Dewitt Ln",
+        coords: [35.194681, -80.875987],
+        operator_id: "mcintyre" 
     },
     {
         id: 2,
-        business_name: "South End Station",
-        location: "200 E Bland St",
-        coords: [35.2130, -80.8560],
-        operator_id: "legit-clt"
+        business_name: "Prefered Parking - SE",
+        location: "2116 Hawkins Rd",
+        coords: [35.209541, -80.862451],
+        operator_id: "pp-sl"
+    },
+        {
+        id: 3,
+        business_name: "Pins Mechanical",
+        location: "307 Tremont Ave",
+        coords: [35.210736, -80.863917],
+        operator_id: "sl-recovery"
+    },        {
+        id: 4,
+        business_name: "Blinders Sport Lounge",
+        location: "307 Tremont Ave",
+        coords: [35.210683, -80.863056],
+        operator_id: "wheel-blockers"
     },
     {
-        id: 3,
-        business_name: "The Ghost Deck",
-        location: "Uptown North",
-        coords: [35.2300, -80.8400],
-        operator_id: "mcintyre" // Same operator, different lot
+        id: 5,
+        business_name: "Heist/Benny Pennello's",
+        location: "2909 N. Davidson St.",
+        coords: [35.245378, -80.809962],
+        operator_id: "sl-recovery"
     },    {
-        id: 3,
-        business_name: "The Ghost Deck",
-        location: "Uptown Mid North",
-        coords: [35.2307, -80.8450],
-        operator_id: "shifty-steve" // Same operator, different lot
-    }
+        id: 6,
+        business_name: "Brooks Sandwich Shop",
+        location: "2718 N. Brevard St",
+        coords: [35.245188, -80.811247],
+        operator_id: "wheel-blockers"
+    },
+     {
+        id: 6,
+        business_name: "Cosmo Apartments",
+        location: "3010 Festivus Ct, Charlotte",
+        coords: [35.245706, -80.811359],
+        operator_id: "wheel-blockers"
+    },
+    //  {
+    //     id: 6,
+    //     business_name: "Olde Meck Brewing",
+    //     location: "2718 N. Brevard St",
+    //     coords: [35.24236, -80.811158],
+    //     operator_id: "wheel-blockers"
+    // },
+
 ];
