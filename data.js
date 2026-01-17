@@ -18,5 +18,14 @@ const bootingData = [
         coords: [35.2130, -80.8560],
         violations: [],
         is_ghost: false
+    },{
+        id: 3,
+        business_name: "Cautionary Parking",
+        operator_name: "Borderline Enforcement LLC",
+        tier: "yellow",
+        location: "NoDa",
+        coords: [35.2471, -80.8031],
+        violations: ["Expired Signage", "Unmarked Vehicle"],
+        is_ghost: false
     }
 ];

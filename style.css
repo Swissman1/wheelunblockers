@@ -146,10 +146,89 @@ td { padding: 15px; border-bottom: 1px solid #333; font-size: 0.95rem; }
     border: 2px solid white;
     box-shadow: 0 0 10px rgba(42, 157, 143, 0.5);
 }
-
 .green-tier-header {
     color: #2a9d8f;
     font-weight: bold;
     margin-bottom: 5px;
     text-transform: uppercase;
+}
+.ghost-label {
+    background: #ff4d4d;
+    color: #000;
+    font-size: 0.6rem;
+    padding: 2px 4px;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.violation-cell {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #bbb;
+}
+
+.page-header {
+    margin-bottom: 20px;
+}
+
+.search-box {
+    position: sticky;
+    top: 0;
+    background: var(--bg-dark);
+    padding-bottom: 10px;
+    z-index: 10;
+}
+#locate-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001; /* Must be above the map */
+    background: var(--nav-bg);
+    color: white;
+    border: 1px solid #444;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#locate-btn:hover { background: #222; }
+.red-tier-header {
+    color: #e63946; /* Matches your --accent red */
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* Add this too if you want the list of violations to look cleaner */
+.violation-list {
+    font-size: 0.9rem;
+    padding-left: 20px;
+    color: #ccc;
+}
+
+/* Yellow Tier Styles */
+.yellow-tier-header {
+    color: #ffb01f;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.badge.yellow {
+    background: #ffb01f;
+    color: #000;
+}
+
+.yellow-row {
+    border-left: 4px solid #ffb01f;
+}
+
+.yellow-dot {
+    background-color: #ffb01f;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(255, 176, 31, 0.6);
 }
