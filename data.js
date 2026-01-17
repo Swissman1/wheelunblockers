@@ -56,7 +56,7 @@ const operators = [
     {
         id: "lab-towing",
         name: "Lab Towing & Parking Solutions, LLC",
-        tier: "yellow",
+        tier: "red",
         is_ghost: false,
         phone: "704-925-2012",
         address: null,
@@ -65,7 +65,7 @@ const operators = [
         {
         id: "lms-towing",
         name: "LMS Parking, LLC",
-        tier: "yellow",
+        tier: "red",
         is_ghost: false,
         phone: "828-263-8326",
         address: null,
@@ -82,7 +82,7 @@ const operators = [
     },    {
         id: "eastway-wrecker",
         name: "Eastway Wrecker Service",
-        tier: "red",
+        tier: "yellow",
         is_ghost: false,
         phone: "704-393-3027",
         address: "2801 Wilkinson Blvd., Charlotte, NC 28208",
