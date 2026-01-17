@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wheel Unblockers</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <title>Wheel Unblockers | Charlotte, NC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,30 +20,50 @@
             <h2>Wheel Unblockers</h2>
         </div>
         <ul>
-            <li><a href="index.html" class="active">Map View</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="map.html">Map View</a></li>
             <li><a href="report.html">Report a Lot</a></li>
-            <li><a href="operators.html">Search Operators</a></li>
-            <li><a href="help.html">Help / Legal Kit</a></li>
-            <li><a href="about.html">About the Project</a></li>
+            <li><a href="/field-guide/field-guide.html">Field Guide</a></li>
+             <li><a href="operators.html">Search Operators</a></li>
+            <!--<li><a href="help.html">Help / Legal Kit</a></li>
+            <li><a href="about.html">About the Project</a></li> -->
         </ul>
         <div class="nav-footer">
             <p>Targeting Predatory Enforcement</p>
         </div>
     </nav>
 
-    <main id="content">
-        <div id="map"></div>
-        <button id="locate-btn" onclick="locateUser()">📍 Find My Lot</button>
-        <section id="ui-panel">
-            <div id="info">
-                <p>Tap a marker to view lot status or legal flags.</p>
+    <main id="content" class="intro-page">
+        <section class="hero">
+            <h1>No more unjust tows!</h1>
+            <p class="lead-text">
+                Paid parking is a ubiquitous part of the Charlotte experience. Increasingly however, property owners are utilizing less than reasonable, and outright illegal fly-by-night tow operators.
+            </p>
+        </section>
+
+        <section class="manifesto">
+            <div class="info-block">
+                <p>The current legal landscape for protecting citizens is shaky, with no hard caps and little proactive enforcement of 
+                    existing statute. Businesses should be allowed to protect their lots, but only through <strong>accountable, ethical operators.</strong></p>
+            </div>
+
+            <h3>Project Goals</h3>
+            <ul class="goals-list">
+                <li><strong>Expose:</strong> Identify below board operators and shame businesses who use them.<a href="map.html">Map</a> <a href="operators.html">Search</a></li>
+                <li><strong>Highlight:</strong>Identify businesses that follow the rules.<a href="map.html">Map</a> <a href="operators.html">Search</a></li>
+                <li><strong>Educate:</strong> Inform citizens of their rights with our <a href="/field-guide/field-guide.html">Field Guide</a>.</li>
+                <li><strong>Assist:</strong> Help victims recover funds from bad-faith operators.</li>
+                <li><strong>Advocate:</strong> Push for legislation to rein in predatory booting.</li>
+            </ul>
+
+            <div class="cta-box">
+                <p>This project thrives on crowd-sourced information.</p>
+                <div class="button-group">
+                    <a href="report.html" class="btn btn-secondary">Report a Lot/ unjust towing experience</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="data.js"></script>
-    <script src="app.js"></script>
-</body>
 </body>
 </html>

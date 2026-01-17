@@ -13,57 +13,10 @@
 
     <main class="dashboard">
         <header>
-            <h1>FLAG OPERATION</h1>
-            <p class="subtitle">Secure GPS Transmission</p>
+            Report
         </header>
-
-        <section class="report-box">
-            <label>LOT/BUSINESS NAME</label>
-            <input type="text" id="loc-name" placeholder="e.g. 5th St Surface Lot">
-            
-            <label>PRIMARY VIOLATION</label>
-            <select id="violation">
-                <option value="ghost">Ghost Entity (No SOS Reg)</option>
-                <option value="zombie">Zombie Owner (Dissolved LLC)</option>
-                <option value="fee">Fee Cap Violation (>$50)</option>
-                <option value="id">ID Failure (Ord. 6-564a)</option>
-                <option value="unmarked">Unmarked Fleet (Ord. 6-564b)</option>
-            </select>
-
-            <div class="gps-status" id="gps-status">GPS Signal Required...</div>
-            
-            <button class="btn-primary" onclick="captureAndSubmit()">SUBMIT REPORT</button>
-        </section>
+        Page under construction.
     </main>
-
-    <script>
-        // Quick submission logic for the report page
-        function captureAndSubmit() {
-            const status = document.getElementById('gps-status');
-            status.innerText = "Acquiring Coordinates...";
-            
-            if (!navigator.geolocation) return alert("Enable GPS.");
-
-            navigator.geolocation.getCurrentPosition(pos => {
-                const report = {
-                    name: document.getElementById('loc-name').value,
-                    violation: document.getElementById('violation').value,
-                    lat: pos.coords.latitude,
-                    lon: pos.coords.longitude,
-                    timestamp: new Date().toISOString()
-                };
-
-                // For now, saving to LocalStorage so the Index page can read it
-                let existing = JSON.parse(localStorage.getItem('reports') || '[]');
-                existing.push(report);
-                localStorage.setItem('reports', JSON.stringify(existing));
-
-                alert("Report Logged.");
-                window.location.href = "index.html";
-            }, err => {
-                status.innerText = "GPS Error: " + err.message;
-            });
-        }
-    </script>
+ 
 </body>
 </html>

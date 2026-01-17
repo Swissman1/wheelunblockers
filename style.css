@@ -3,6 +3,7 @@
     --bg-dark: #121212;
     --nav-bg: #1a1a1a;
     --accent: #e63946;
+    --second-accent: #1877c5; 
     --text: #e0e0e0;
     --nav-width: 260px;
 }
@@ -33,7 +34,7 @@ body {
 #side-nav ul { list-style: none; padding: 20px 0; flex-grow: 1; }
 #side-nav li a {
     display: block;
-    padding: 15px 25px;
+    padding: 12px 25px;
     color: var(--text);
     text-decoration: none;
     transition: 0.2s;
@@ -44,7 +45,7 @@ body {
     border-left: 4px solid var(--accent);
 }
 
-.nav-footer { padding: 20px; font-size: 0.7rem; color: #666; }
+.nav-footer { padding: 20px; font-size: 0.8rem; color: #777; }
 
 /* Main Content Area */
 #content {
@@ -169,7 +170,7 @@ td { padding: 15px; border-bottom: 1px solid #333; font-size: 0.95rem; }
 }
 
 .page-header {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .search-box {
@@ -232,3 +233,119 @@ td { padding: 15px; border-bottom: 1px solid #333; font-size: 0.95rem; }
     border: 2px solid white;
     box-shadow: 0 0 10px rgba(255, 176, 31, 0.6);
 }
+
+.op-contact {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* Optional: Make phone numbers clickable on mobile */
+.op-contact a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Intro Page Styling */
+.intro-page {
+    padding: 60px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow-y: auto !important; /* Allow scrolling on the intro */
+}
+
+.intro-page h1 {
+    font-size: 3rem;
+    color: var(--second-accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #fff;
+    border-left: 4px solid var(--accent);
+    padding-left: 20px;
+}
+
+.info-block {
+    margin: 40px 0;
+    font-size: 1.1rem;
+    color: #bbb;
+}
+
+.goals-list {
+    list-style: none;
+    padding: 0;
+}
+
+.goals-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+}
+
+.goals-list li strong {
+    color: var(--accent);
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.cta-box {
+    margin-top: 50px;
+    padding: 30px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.btn-primary { background: var(--accent); color: white; }
+.btn-secondary { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+
+.btn:hover { opacity: 0.8; transform: translateY(-2px); }
+.intro-page {
+    padding: 0px 10px; /* Halved the padding */
+    max-width: 900px; /* Allow it to breathe wider */
+}
+/* Table Specific Compression */
+#operator-table th, 
+#operator-table td {
+    padding: 10px 8px; /* Tight vertical padding */
+    font-size: 0.85rem;
+    vertical-align: top;
+}
+
+.tel-link {
+    color: #3388ff;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.address-cell {
+    font-size: 0.75rem;
+    color: #888;
+    max-width: 200px;
+}
+
+/* Ensure the table doesn't cause page-wide horizontal scroll */
+.table-wrapper {
+    overflow-x: auto;
+    background: #1a1a1a;
+    border: 1px solid #333;
+}
+
