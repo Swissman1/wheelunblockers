@@ -1,0 +1,38 @@
+.yellow-dot {
+    background-color: #ffb01f;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(255, 176, 31, 0.6);
+}#locate-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001; /* Must be above the map */
+    background: var(--nav-bg);
+    color: white;
+    border: 1px solid #444;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#locate-btn:hover { background: #222; }
+.green-dot {
+    background-color: #2a9d8f;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(42, 157, 143, 0.5);
+}
+
+.red-dot {
+    background-color: #ff4d4d;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.8);
+}

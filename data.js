@@ -11,7 +11,7 @@ const operators = [
     {
         id: "sl-recovery",
         name: "SL Recovery, INC",
-        tier: "Yellow",
+        tier: "yellow",
         is_ghost: false,
         phone: "704-889-2608",
         address: "3804 N.Graham St, Charlotte, NC 28206",
@@ -20,7 +20,7 @@ const operators = [
         {
         id: "automobile-recovery",
         name: "Automobile Recovery & Parking Enforcement Inc",
-        tier: "Yellow",
+        tier: "yellow",
         is_ghost: false,
         phone: "980-395-8460",
         address: "7425 Orr Rd., Charlotte, NC 28213",
@@ -29,7 +29,7 @@ const operators = [
             {
         id: "wheel-blockers",
         name: "WheelBlockers Towing & Parking Enforcement Inc",
-        tier: "Red",
+        tier: "red",
         is_ghost: false,
         phone: "704-606-4166",
         address: "1326 Ashby Rd., Charlotte, NC 28206",
@@ -37,7 +37,7 @@ const operators = [
     },             {
         id: "pp-sl",
         name: "Preferred Parking - SL Recovery",
-        tier: "Green",
+        tier: "green",
         is_ghost: false,
         phone: "704-889-2608",
         address: "3804 N.Graham St, Charlotte, NC 28206",
@@ -46,7 +46,7 @@ const operators = [
     {
         id: "qc-impound",
         name: "QC Impound",
-        tier: "Green",
+        tier: "green",
         is_ghost: false,
         phone: "704-699-6330",
         address: "206 Yeoman Rd, Charlotte, NC 28217",
@@ -56,7 +56,7 @@ const operators = [
     {
         id: "lab-towing",
         name: "Lab Towing & Parking Solutions, LLC",
-        tier: "Yellow",
+        tier: "yellow",
         is_ghost: false,
         phone: "704-925-2012",
         address: null,
@@ -65,7 +65,7 @@ const operators = [
     {
         id: "clt-towing",
         name: "Charlotte Towing & Recovery",
-        tier: "Yellow",
+        tier: "yellow",
         is_ghost: false,
         phone: "704-925-2012",
         address: "3040 Rozelles Ferry Rd., Charlotte, NC 28208",
@@ -73,7 +73,7 @@ const operators = [
     },    {
         id: "eastway-wrecker",
         name: "Eastway Wrecker Service",
-        tier: "Yellow",
+        tier: "yellow",
         is_ghost: false,
         phone: "704-393-3027",
         address: "2801 Wilkinson Blvd., Charlotte, NC 28208",
