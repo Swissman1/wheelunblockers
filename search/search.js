@@ -3,7 +3,6 @@ function renderTable(data) {
     if (!tbody) return;
 
     tbody.innerHTML = data.map(prop => {
-        // Look up the operator linked to this specific property
         const op = operators.find(o => o.id === prop.operator_id);
         if (!op) return ''; // Safety check
 
