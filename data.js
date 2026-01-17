@@ -82,7 +82,7 @@ const operators = [
     },    {
         id: "eastway-wrecker",
         name: "Eastway Wrecker Service",
-        tier: "yellow",
+        tier: "red",
         is_ghost: false,
         phone: "704-393-3027",
         address: "2801 Wilkinson Blvd., Charlotte, NC 28208",
