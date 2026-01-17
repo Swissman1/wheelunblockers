@@ -62,6 +62,15 @@ const operators = [
         address: null,
         violations: ["No Address on Signage", "25% Credit card fee"]
     },
+        {
+        id: "lms-towing",
+        name: "LMS Parking, LLC",
+        tier: "yellow",
+        is_ghost: false,
+        phone: "828-263-8326",
+        address: null,
+        violations: ["No Address on Signage", "25% Credit card fee"]
+    },
     {
         id: "clt-towing",
         name: "Charlotte Towing & Recovery",
@@ -128,6 +137,37 @@ const properties = [
         location: "3010 Festivus Ct, Charlotte",
         coords: [35.245706, -80.811359],
         operator_id: "wheel-blockers"
+    },     {
+        id: 7,
+        business_name: "Gilde Brewery",
+        location: "3530 Dewitt Ln",
+        coords: [35.194289, -80.876010],
+        operator_id: "qc-impound"
+    },
+       {
+        id: 8,
+        business_name: "Beat the Bomb",
+        location: "3530 Tryclan",
+        coords: [35.194523, -80.877044],
+        operator_id: "qc-impound"
+    },       {
+        id: 9,
+        business_name: "Family Dollar",
+        location: "3533 Tryclan",
+        coords: [35.194765, -80.877516],
+        operator_id: "lab-towing"
+    },   {
+        id: 10,
+        business_name: "S. Tryon Townhomes",
+        location: "3717 Gleason Wy",
+        coords: [35.194572, -80.87773],
+        operator_id: "clt-towing"
+    },   {
+        id: 11,
+        business_name: "Ello House",
+        location: "3631 Tryclan Dr",
+        coords: [35.194019, -80.876937],
+        operator_id: "lms-towing"
     },
     //  {
     //     id: 6,
