@@ -13,23 +13,72 @@ function renderTable(data) {
         if (!op) return '';
 
         const ghostTag = op.is_ghost ? `<span class="ghost-label">GHOST</span>` : '';
-        const cleanPhone = op.phone.replace(/\D/g,'');
         
+        // Added onclick and style cursor
         return `
-            <tr class="${op.tier}-row">
+            <tr class="${op.tier}-row" onclick="showDetails('${prop.id}')" style="cursor:pointer;">
                 <td>
                     <div class="biz-name">${prop.business_name}</div>
                     <div class="op-name">Operator: ${op.name} ${ghostTag}</div>
                 </td>
                 <td><span class="badge ${op.tier}">${op.tier.toUpperCase()}</span></td>
-                <td><div class="violation-cell">${op.violations.length > 0 ? op.violations.join('<br>') : 'None'}</div></td>
+                <td><div class="violation-cell">${op.violations.length} Reported</div></td>
                 <td>${prop.location}</td>
-                <td><a href="tel:${cleanPhone}" class="tel-link">${op.phone}</a></td>
-                <td><div class="address-cell">${op.address}</div></td>
+                <td>${op.phone}</td>
+                <td>${op.address}</td>
             </tr>
         `;
     }).join('');
 }
+
+function showDetails(propertyId) {
+    const prop = properties.find(p => p.id == propertyId);
+    const op = operators.find(o => o.id === prop.operator_id);
+    const ghostTag = op.is_ghost ? '<span class="ghost-label">GHOST</span>' : '';
+    const cleanPhone = op.phone.replace(/\D/g,'');
+
+    const panel = document.getElementById('ui-panel');
+    const infoDiv = document.getElementById('info');
+    
+    panel.className = 'expanded';
+
+    infoDiv.innerHTML = `
+        <div class="panel-header-row">
+            <div class="panel-title-group">
+                <div class="tier-header ${op.tier}-tier">
+                    ${op.tier.toUpperCase()}: ${prop.business_name}
+                </div>
+                <p class="panel-subtitle">${prop.location}</p>
+            </div>
+            <button class="close-panel-btn" onclick="closePanel()">&times;</button>
+        </div>
+
+        <div class="panel-grid">
+            <div class="panel-grid-item">
+                <p class="label">Enforcement Operator</p>
+                <p class="value"><strong>${op.name}</strong> ${ghostTag}</p>
+            </div>
+            <div class="panel-grid-item">
+                <p class="label">Contact Info</p>
+                <a href="tel:${cleanPhone}" class="tel-link">📞 ${op.phone}</a>
+                <p class="sub-value">📍 ${op.address}</p>
+            </div>
+        </div>
+
+        <ul class="violation-list">
+            ${op.violations.length > 0 ? 
+                op.violations.map(v => `<li>${v}</li>`).join('') : 
+                '<li>No reported violations.</li>'}
+        </ul>
+    `;
+}
+
+function closePanel() {
+    const panel = document.getElementById('ui-panel');
+    panel.className = 'minimized';
+    document.querySelectorAll('tr').forEach(r => r.classList.remove('active-row'));
+}
+
 function sortTable(column) {
     if (currentSort.column === column) {
         currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
@@ -76,8 +125,8 @@ function filterOperators() {
         return prop.business_name.toLowerCase().includes(query) || 
                prop.location.toLowerCase().includes(query) ||
                op.name.toLowerCase().includes(query) ||
-               op.address.toLowerCase().includes(query) ||
-               op.phone.includes(query);
+               (op.address != null && op.address.toLowerCase().includes(query)) ||
+               (op.phone != null && op.phone.includes(query));
     }).sort(x=> x.business_name);
     
     renderTable(filtered);

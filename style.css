@@ -55,7 +55,7 @@ body {
     height: 100vh;
 }
 
-#map { flex: 1; }
+
 #ui-panel { height: 250px; background: var(--nav-bg); border-top: 1px solid #333; padding: 20px; }
 
 /* Mobile Logic */
@@ -63,13 +63,32 @@ body {
 .mobile-top-bar { display: none; }
 
 @media (max-width: 768px) {
-    body { flex-direction: column; }
     
+    .mobile-top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; 
+        gap: 15px; 
+        padding: 10px 15px;
+    }
+
+    .hamburger {
+        cursor: pointer;
+        font-size: 1.5rem;
+        order: -1; 
+    }
+
     #side-nav {
         position: fixed;
-        left: calc(-1 * var(--nav-width));
-        transition: 0.3s;
+        left: -260px; 
+        transition: 0.3s ease;
     }
+
+    #nav-toggle:checked + #side-nav {
+        left: 0;
+    }
+    body { flex-direction: column; }
+    
 
     #nav-toggle:checked + #side-nav { left: 0; }
 
@@ -87,28 +106,16 @@ body {
     .hamburger { font-size: 1.5rem; cursor: pointer; color: var(--accent); }
 }
 .search-container { padding: 40px; max-width: 1000px; margin: 0 auto; }
-
-#operator-search {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 30px;
-    background: #222;
-    border: 1px solid #444;
-    color: white;
-    font-size: 1.1rem;
-    border-radius: 4px;
+#nav-toggle:checked ~ #content {
+    filter: brightness(0.5);
+    pointer-events: none; /* Prevents accidental map clicks while menu is open */
 }
 
-.table-wrapper { overflow-x: auto; }
 
 table { width: 100%; border-collapse: collapse; background: #1a1a1a; }
 th { text-align: left; padding: 15px; border-bottom: 2px solid #333; color: #888; text-transform: uppercase; font-size: 0.8rem; }
 td { padding: 15px; border-bottom: 1px solid #333; font-size: 0.95rem; }
 
-/* Status Badges */
-.badge { padding: 4px 8px; border-radius: 3px; font-size: 0.7rem; font-weight: bold; }
-.badge.red { background: #e63946; color: white; }
-.badge.green { background: #2a9d8f; color: white; }
 
 .biz-name {
     font-weight: bold;
@@ -123,11 +130,6 @@ td { padding: 15px; border-bottom: 1px solid #333; font-size: 0.95rem; }
     font-family: monospace; /* Gives it that "record" feel */
 }
 
-/* Optional: Highlight Ghost Operators */
-.red-row .op-name {
-    color: #ff4d4d88;
-}
-.red-row { border-left: 4px solid #e63946; }
 
 /* Custom Map Markers */
 
@@ -175,17 +177,6 @@ td { padding: 15px; border-bottom: 1px solid #333; font-size: 0.95rem; }
     margin-bottom: 5px;
     text-transform: uppercase;
 }
-
-.badge.yellow {
-    background: #ffb01f;
-    color: #000;
-}
-
-.yellow-row {
-    border-left: 4px solid #ffb01f;
-}
-
-
 
 .op-contact {
     font-size: 0.75rem;
@@ -271,16 +262,10 @@ td { padding: 15px; border-bottom: 1px solid #333; font-size: 0.95rem; }
 
 .btn:hover { opacity: 0.8; transform: translateY(-2px); }
 .intro-page {
-    padding: 0px 10px; /* Halved the padding */
-    max-width: 900px; /* Allow it to breathe wider */
+    padding: 0px 10px;
+    max-width: 900px; 
 }
-/* Table Specific Compression */
-#operator-table th, 
-#operator-table td {
-    padding: 10px 8px; /* Tight vertical padding */
-    font-size: 0.85rem;
-    vertical-align: top;
-}
+
 
 .tel-link {
     color: #3388ff;
@@ -295,10 +280,4 @@ td { padding: 15px; border-bottom: 1px solid #333; font-size: 0.95rem; }
     max-width: 200px;
 }
 
-/* Ensure the table doesn't cause page-wide horizontal scroll */
-.table-wrapper {
-    overflow-x: auto;
-    background: #1a1a1a;
-    border: 1px solid #333;
-}
 

@@ -3,7 +3,18 @@
     line-height: 1.4;
     color: #bbb;
 }
+.search-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Fill the main content area */
+}
 
+.table-wrapper {
+    flex: 1; /* Takes up available space */
+    overflow-y: auto; /* Scroll the table, not the whole page */
+    background: #1a1a1a;
+    border: 1px solid #333;
+}
 .search-box {
     position: sticky;
     top: 0;
@@ -11,6 +22,17 @@
     padding-bottom: 10px;
     z-index: 10;
 }
+.label{
+    font-weight: bold;
+}
+
+#operator-table th, 
+#operator-table td {
+    padding: 10px 8px; 
+    font-size: 0.85rem;
+    vertical-align: top;
+}
+
 /* Table Sorting Styles */
 .sortable {
     cursor: pointer;
@@ -43,11 +65,148 @@
     opacity: 1;
     color: var(--accent);
 }
+#operator-search {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 30px;
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 4px;
+}
+#ui-panel {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease; 
+    overflow: hidden;
+}
+#ui-panel.minimized {
+    height: 0;
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
+    opacity: 0;
+}
 
+
+#ui-panel.expanded {
+    height: auto;
+    min-height: 120px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    opacity: 1;
+}
+
+#ui-panel .violation-list {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    columns: 2; /* Split violations into two columns to save vertical space */
+}
+.table-wrapper { overflow-x: auto; }
 #operator-table tr td:nth-child(n) {
     transition: background 0.2s;
 }/* Subtle styling for the sortable headers in style.css */
 th.sortable.sort-asc, th.sortable.sort-desc {
     background: rgba(230, 57, 70, 0.05);
     border-bottom: 2px solid var(--accent);
+}/* Expanded UI Panel Styling */
+.panel-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
+
+.panel-subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 2px 0;
+}
+
+.close-panel-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0 5px;
+}
+
+.close-panel-btn:hover {
+    color: var(--accent);
+}
+
+/* Grid Layout for details */
+.panel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 10px;
+    background: #222;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.panel-grid-item .label {
+    font-size: 0.75rem;
+    color: #aaa;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.panel-grid-item .value {
+    font-size: 0.9rem;
+    margin: 2px 0;
+}
+
+.panel-grid-item .sub-value {
+    font-size: 0.75rem;
+    color: #777;
+    margin: 0;
+}
+
+/* Reusable Tier Headers */
+.tier-header {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.red-tier { color: var(--accent); }
+.yellow-tier { color: #ffb01f; }
+.green-tier { color: #2a9d8f; }
+
+/* Active Row Highlight */
+.active-row {
+    background-color: #2a2a2a !important;
+    border-left: 3px solid var(--accent);
+}
+
+/* Mobile adjustments for the grid */
+@media (max-width: 600px) {
+    .panel-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+tr:hover {
+    background: #252525 !important;
+}
+
+/* Red-tier-row already has a border, but let's make it pop on click */
+tr.active-row {
+    background: #333 !important;
+    outline: 1px solid var(--accent);
+}
+
+.badge.yellow {
+    background: #ffb01f;
+    color: #000;
+}/* Status Badges */
+.badge { padding: 4px 8px; border-radius: 3px; font-size: 0.7rem; font-weight: bold; }
+.badge.red { background: #e63946; color: white; }
+.badge.green { background: #2a9d8f; color: white; }
