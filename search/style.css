@@ -11,3 +11,43 @@
     padding-bottom: 10px;
     z-index: 10;
 }
+/* Table Sorting Styles */
+.sortable {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sortable:hover {
+    background: #222;
+    color: var(--accent);
+}
+
+/* Indicators */
+.sortable::after {
+    content: ' ↕';
+    font-size: 0.7rem;
+    opacity: 0.3;
+    margin-left: 5px;
+}
+
+.sort-asc::after {
+    content: ' ↑';
+    opacity: 1;
+    color: var(--accent);
+}
+
+.sort-desc::after {
+    content: ' ↓';
+    opacity: 1;
+    color: var(--accent);
+}
+
+#operator-table tr td:nth-child(n) {
+    transition: background 0.2s;
+}/* Subtle styling for the sortable headers in style.css */
+th.sortable.sort-asc, th.sortable.sort-desc {
+    background: rgba(230, 57, 70, 0.05);
+    border-bottom: 2px solid var(--accent);
+}

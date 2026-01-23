@@ -26,6 +26,17 @@ const operators = [
         address: "7425 Orr Rd., Charlotte, NC 28213",
         violations: ["Vauge/High rates","20% credit card fee"]
     }, 
+    {
+        id: "tp-towing",
+        name: "TP Towing",
+        tier: "red",
+        is_ghost: true,
+        phone: "704-400-0857",
+        address: "114 E. 28th St., Charlotte, NC 28206",
+        comments: "Tow lot is owned by 'NU & MINH INC', tow company featured by wbt for predatory commercial towing.",
+        violations: ["Vauge/High rates","Utilizes Spotters","No LLC Registration","10% credit card fee"]
+    },
+
             {
         id: "wheel-blockers",
         name: "WheelBlockers Towing & Parking Enforcement Inc",
@@ -33,7 +44,7 @@ const operators = [
         is_ghost: false,
         phone: "704-606-4166",
         address: "1326 Ashby Rd., Charlotte, NC 28206",
-        violations: ["Vauge/High rates","Utilizes Spotters"]
+        violations: ["Vauge/High rates","Utilizes Spotters", "Operators reported to threaten"]
     },             {
         id: "pp-sl",
         name: "Preferred Parking - SL Recovery",
@@ -87,7 +98,14 @@ const operators = [
         phone: "704-393-3027",
         address: "2801 Wilkinson Blvd., Charlotte, NC 28208",
         violations: ["Vauge/High rates"]
-    },
+    },{
+            id: "metrop",
+        name: "Metropolis",
+        tier: "yellow",
+        is_ghost: false,
+        phone: "N/a",
+        address: "N/a",
+        violations: ["Issues Non-legal 'fines'"]}
 ];
 
 const properties = [
@@ -169,12 +187,52 @@ const properties = [
         coords: [35.194019, -80.876937],
         operator_id: "lms-towing"
     },
-    //  {
-    //     id: 6,
-    //     business_name: "Olde Meck Brewing",
-    //     location: "2718 N. Brevard St",
-    //     coords: [35.24236, -80.811158],
-    //     operator_id: "wheel-blockers"
-    // },
+     {
+        id: 12,
+        business_name: "Inner Peaks/The Casey",
+        location: "1837 N Tyron St.",
+        coords: [35.242004, -80.824037],
+        operator_id: "wheel-blockers"
+    },{
+        id: 13,
+        business_name: "Amtrak",
+        location: "1920 N Tyron St.",
+        coords: [35.2421877, -80.823429],
+        operator_id: "metrop"
+    },
+    {
+        id: 14,
+        business_name: "SUMMIT AVENUE NORTHEND LLC",
+        location: "2229 N Tyron St.",
+        coords: [35.245350, -80.820213],
+        operator_id: "wheel-blockers"
+    },
+    {
+        id: 15,
+        business_name: "SUMMIT AVENUE NORTHEND LLC",
+        location: "2229 N Tyron St.",
+        coords: [35.245731, -80.820718],
+        operator_id: "sl-recovery"
+    },{
+        id: 16,
+        business_name: "TBRL HOLDINGS GROUP LLC",
+        location: "2322 N Tyron St.",
+        coords: [35.246012, -80.818900],
+        operator_id: "wheel-blockers"
+    },
+{
+        id: 17,
+        business_name: "123 E 27 LLC",
+        location: "123 E 27th St.",
+        coords: [35.245942, -80.818145],
+        operator_id: "wheel-blockers"
+    },
+     {
+        id: 18,
+        business_name: "Olde Meck Brewing",
+        location: "4150 Yancey Rd.",
+        coords: [35.187577, -80.882379],
+        operator_id: "wheel-blockers"
+    },
 
 ];

@@ -37,16 +37,16 @@
             
             <div class="table-wrapper">
                 <table id="operator-table">
-                    <thead>
-                        <tr>
-                            <th>Business / Operator Name</th>
-                            <th>Status</th>
-                            <th>Violations</th>
-                            <th>Primary Location</th>
-                            <th>Phone number</th>
-                            <th>Address</th>
-                        </tr>
-                    </thead>
+<thead>
+    <tr>
+        <th class="sortable" onclick="sortTable('business_name')">Business / Operator Name</th>
+        <th class="sortable" onclick="sortTable('tier')">Status</th>
+        <th class="sortable" onclick="sortTable('violations')">Violations</th>
+        <th class="sortable" onclick="sortTable('location')">Primary Location</th>
+        <th>Phone number</th>
+        <th>Address</th>
+    </tr>
+</thead>
                     <tbody id="table-body">
                         </tbody>
                 </table>
